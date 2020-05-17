@@ -24,7 +24,7 @@ function bypassJailbreakDetection() {
 		var hook = ObjC.classes.Utils['+ isJailbroken'];
 		Interceptor.attach(hook.implementation, { 
 	    	onLeave: function(oldValue) {
-	    		_newValue = ptr("0x0") ;
+	    		var _newValue = ptr("0x0") ;
 	    		oldValue.replace(_newValue);
 	    	}
 	    });
